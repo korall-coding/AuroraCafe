@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AuroraCafe.Pages
 {
-    public class Index1Model : PageModel
+    public class ContactModel : PageModel
     {
         public void OnGet()
         {

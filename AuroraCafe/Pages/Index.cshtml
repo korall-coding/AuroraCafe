@@ -1,10 +1,35 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Kezdőoldal";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Egy jó kávéval kezdődik a nap</h1>
+    <p>Frissen őrölt kávé, házi sütemények és egy nyugodt hely, ahol jó egy kicsit megállni.</p>
+
+    <h2>Kávé, süti, kikapcsolódás</h2>
+    <p>Nálunk minden csésze kávé frissen készül, a sütemények pedig gondosan válogatott alapanyagokból készülnek. Legyen szó egy gyors reggeli kávéról, egy délutáni találkozóról vagy egy nyugodt beszélgetésről, nálunk mindig találsz egy kellemes helyet.</p>
+
+    <h2>Amit nálunk találsz</h2>
+
+        <div class="box">
+            <h3>☕ Frissen készített kávék</h3>
+            <p>Klasszikus kedvencek és különleges kávékülönlegességek.</p>
+        </div>
+
+        <div class="box">
+            <h3>🍰 Házi sütemények</h3>
+            <p>Édes finomságok, amelyek tökéletesen illenek egy csésze kávé mellé.</p>
+        </div>
+
+        <div class="box">
+            <h3>🌿 Hangulatos környezet</h3>
+            <p>Egy hely, ahol akár néhány percre, akár egy egész délutánra megpihenhetsz.</p>
+        </div>
+
+    <h2>Látogass meg minket!</h2>
+    <p>Várunk szeretettel egy finom kávéra és egy kis kikapcsolódásra.</p>
+    <a asp-page="/Menu">Nézd meg az étlapunkat →</a>
+
 </div>
