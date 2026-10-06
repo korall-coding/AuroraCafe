@@ -1,4 +1,23 @@
 ﻿@page
 @model AuroraCafe.Pages.MenuModel
 @{
+    ViewData["Title"] = "Itallap";
+}
+
+<h1>Itallap</h1>
+
+@foreach (var category in Model.Categories)
+{
+    <h2>@category.Name</h2>
+
+    @foreach (var product in Model.Products)
+    {
+        if (product.CategoryId == category.Id)
+        {
+            <p>@product.Name</p>
+            <p>@product.Description</p>
+            <p>@product.Price.ToString("0") Ft</p>
+            <img src="~/images/@product.ImageUrl" alt="@product.Name" />
+        }
+    }
 }
