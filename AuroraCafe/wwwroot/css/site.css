@@ -8,15 +8,144 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  margin-bottom: 60px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+    font-family: Inter, "sans-serif";
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #D9CCBE;
+    width: 100%;
+    padding: 20px;
+}
+
+    .main-nav a {
+        text-decoration: none;
+        color: #3B2D24;
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+
+    .main-nav .logo {
+        position: absolute;
+        left: 20px;
+        font-size: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #3B2D24;
+    }
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px 20px;
+    gap: 40px;
+}
+
+.first {
+    max-width: 80%;
+}
+
+.index-box {
+    flex: 1;
+    height: auto;
+}
+
+p {
+    font-family: Inter, "sans-serif";
+    color: #796A5C;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #3B2D24;
+    letter-spacing: 1px;
+}
+
+h1 span {
+    display: block;
+}
+
+h1 span.highlight {
+    color: #8B5E42;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+    .right img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-top-left-radius: 50% 30%;
+        border-top-right-radius: 50% 30%;
+        max-height: 500px;
+    }
+
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 20px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn.primary {
+    background-color: #8B5E42;
+    color: #FFFCF7;
+}
+
+.btn.secondary {
+    background-color: #FFFCF7;
+    color: #8B5E42;
+    border: 1px solid #8B5E42;
+}
+
+.second {
+    background-color: #EDE3D5;
+    width: 90%;
+}
+
+.box {
+    display: inline-block;
+}
+
+.box li {
+    list-style-type: none;
 }
