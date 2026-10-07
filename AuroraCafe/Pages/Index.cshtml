@@ -4,9 +4,43 @@
     ViewData["Title"] = "Kezdőoldal";
 }
 
-<div>
-    <h1>Egy jó kávéval kezdődik a nap</h1>
-    <p>Frissen őrölt kávé, házi sütemények és egy nyugodt hely, ahol jó egy kicsit megállni.</p>
+<section class="section first">
+    <div class="index-box left">
+        <h1>
+            <span>Jó kávé.</span>
+            <span>Nyugodt reggelek.</span>
+            <span class="highlight">Szebb napok.</span>
+        </h1>
+        <p>Frissen őrölt kávé, házi sütemények és egy nyugodt hely, ahol jó egy kicsit megállni.</p>
+
+        <div class="cta-buttons">
+            <a class="btn primary" asp-page="/Menu">Fedezd fel a menüt &#8594;</a>
+            <a class="btn secondary" asp-page="/Contact">Elérhetőségeink &#8594;</a>
+        </div>
+
+    </div>
+    <div class="index-box right">
+        <img src="~/images/cover-image.webp" alt=""/>
+    </div>
+</section>
+
+<section class="section second">
+    <div>
+        <h3>Mindig jó kávé</h3>
+        <p>Specialty kávészemek. Gondos elkészítés.</p>
+    </div>
+
+    <div>
+        <h3>Frissen készül minden reggel</h3>
+        <p>Kis tételekben, helyben sütve.</p>
+    </div>
+
+    <div>
+        <h3>Egy hely, ahol jó elidőzni</h3>
+        <p>Ismerős arcok és új barátok társaságában.</p>
+    </div>
+</section>
+
 
     <h2>Kávé, süti, kikapcsolódás</h2>
     <p>Nálunk minden csésze kávé frissen készül, a sütemények pedig gondosan válogatott alapanyagokból készülnek. Legyen szó egy gyors reggeli kávéról, egy délutáni találkozóról vagy egy nyugodt beszélgetésről, nálunk mindig találsz egy kellemes helyet.</p>
@@ -32,4 +66,4 @@
     <p>Várunk szeretettel egy finom kávéra és egy kis kikapcsolódásra.</p>
     <a asp-page="/Menu">Nézd meg az étlapunkat →</a>
 
-</div>
+
