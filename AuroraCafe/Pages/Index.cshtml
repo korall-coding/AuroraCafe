@@ -4,7 +4,7 @@
     ViewData["Title"] = "Kezdőoldal";
 }
 
-<section class="section first">
+<section class="first">
     <div class="index-box left">
         <h1>
             <span>Jó kávé.</span>
@@ -14,8 +14,8 @@
         <p>Frissen őrölt kávé, házi sütemények és egy nyugodt hely, ahol jó egy kicsit megállni.</p>
 
         <div class="cta-buttons">
-            <a class="btn primary" asp-page="/Menu">Fedezd fel a menüt &#8594;</a>
-            <a class="btn secondary" asp-page="/Contact">Elérhetőségeink &#8594;</a>
+            <a class="btn primary" asp-page="/Menu">Fedezd fel a menüt <i class="bi bi-arrow-up-right"></i></a>
+            <a class="btn secondary" asp-page="/Contact">Elérhetőségeink <i class="bi bi-arrow-up-right"></i></a>
         </div>
 
     </div>
@@ -24,26 +24,106 @@
     </div>
 </section>
 
-<section class="section second">
-    <div>
-        <h3>Mindig jó kávé</h3>
-        <p>Specialty kávészemek. Gondos elkészítés.</p>
+<section class="second">
+    <div class="box">
+        <span class="feature-icon-box">
+            <i class="bi bi-cup-hot"></i>
+        </span>
+
+        <div class="feature-content">
+            <h3>Mindig jó kávé</h3>
+            <p>Gondosan válogatott kávék, szeretettel készítve.</p>
+        </div>
     </div>
 
-    <div>
-        <h3>Frissen készül minden reggel</h3>
-        <p>Kis tételekben, helyben sütve.</p>
+    <div class="box">
+        <span class="feature-icon-box">
+            <i class="bi bi-cake"></i>
+        </span>
+
+        <div class="feature-content">
+            <h3>Friss ízek minden nap</h3>
+            <p>Finom falatok, amelyek még szebbé teszik a reggelt.</p>
+        </div>
     </div>
 
-    <div>
-        <h3>Egy hely, ahol jó elidőzni</h3>
-        <p>Ismerős arcok és új barátok társaságában.</p>
+    <div class="box">
+        <span class="feature-icon-box">
+            <i class="bi bi-house-heart"></i>
+        </span>
+
+        <div class="feature-content">
+            <h3>Egy hely, ahol jó lenni</h3>
+            <p>Nyugodt pillanatok és kellemes beszélgetések.</p>
+        </div>
+    </div>
+</section>
+
+<section class="third">
+    <div class="third-image">
+        <img class="large-image" src="~/images/a-little-about-us.webp" alt=""/>
+        <img class="small-image" src="~/images/small-image.webp" alt=""/>
+    </div>
+
+    <div class="third-content">
+        <h2>
+            <span>Több mint egy kávézó.</span>
+            <span>A mindennapok apró öröme.</span>
+        </h2>
+        <p>Nálunk a kávézás nem csupán egy gyors megálló a napodban. Egy hely, ahol lelassulhatsz, elmerülhetsz a gondolataidban, vagy egyszerűen csak élvezheted a pillanatot egy finom kávé mellett.</p>
+        <p>Gondosan válogatott kávékkal, frissen készült süteményekkel és barátságos hangulattal várunk. Legyen szó egy nyugodt reggelről, egy délutáni beszélgetésről vagy néhány lopott percről a rohanásban, nálunk mindig találsz egy kis időt magadra.</p>
+        <a class="btn primary" asp-page="/Contact">Ismerj meg minket <i class="bi bi-arrow-up-right"></i></a>
+    </div>
+</section>
+
+<section class="fourth">
+    <div class="fourth-content">
+
+        <div class="fourth-heading">
+            <h2>Találd meg az új kedvenced</h2>
+            <a class="btn secondary" asp-page="/Menu">Teljes kínálat <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+
+        <div class="cards">
+            @foreach (var product in Model.FeaturedProducts)
+            {
+                <div class="card">
+                    <img src="~/images/@product.ImageUrl">
+
+                    <h3>@product.Name</h3>
+
+                    <p id="product-description">@product.Description</p>
+
+                    <p>@product.Price.ToString("0") Ft</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="fifth">
+    <div class="blend-content">
+        <h2>A tökéletes kávé már a készítés előtt megszületik.</h2>
+        <p>Független kávépörkölőkkel dolgozunk együtt, akik személyesen ismerik a termelőket, tisztességesen megfizetik a munkájukat, és hozzánk hasonlóan szívvel-lélekkel dolgoznak a minőségért.</p>
+        <p>Minden kávészemnek megvan a maga története. Mi csak segítünk, hogy igazán kibontakozhasson.</p>
+        <div id="fifth-border">
+            <h3>The Aurora Blend</h3>
+            <p>Tejcsokoládé / pirított mandula / lágy karamell</p>
+        </div>
+        <div>
+            <a class="btn third" asp-page="/About">Kávéfiolozófiánk <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+    </div>
+
+    <div class="blend-image">
+        <img src="~/images/the-aurora-blend.webp" alt="" />
     </div>
 </section>
 
 
-    <h2>Kávé, süti, kikapcsolódás</h2>
-    <p>Nálunk minden csésze kávé frissen készül, a sütemények pedig gondosan válogatott alapanyagokból készülnek. Legyen szó egy gyors reggeli kávéról, egy délutáni találkozóról vagy egy nyugodt beszélgetésről, nálunk mindig találsz egy kellemes helyet.</p>
+
+
+    <!--<p>Nálunk minden csésze kávé frissen készül, a sütemények pedig gondosan válogatott alapanyagokból készülnek. Legyen szó egy gyors reggeli kávéról, egy délutáni találkozóról vagy egy nyugodt beszélgetésről, nálunk mindig találsz egy kellemes helyet.</p>
 
     <h2>Amit nálunk találsz</h2>
 
@@ -64,6 +144,6 @@
 
     <h2>Látogass meg minket!</h2>
     <p>Várunk szeretettel egy finom kávéra és egy kis kikapcsolódásra.</p>
-    <a asp-page="/Menu">Nézd meg az étlapunkat →</a>
+    <a asp-page="/Menu">Nézd meg az étlapunkat →</a>-->
 
 
