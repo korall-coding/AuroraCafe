@@ -6,10 +6,6 @@ namespace AuroraCafe.Models;
 
 public partial class AuroraCafeDbContext : DbContext
 {
-    public AuroraCafeDbContext()
-    {
-    }
-
     public AuroraCafeDbContext(DbContextOptions<AuroraCafeDbContext> options)
         : base(options)
     {
@@ -18,6 +14,8 @@ public partial class AuroraCafeDbContext : DbContext
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
+
+    public virtual DbSet<Review> Reviews { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -54,6 +52,18 @@ public partial class AuroraCafeDbContext : DbContext
                 .HasForeignKey(d => d.CategoryId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("products_ibfk_1");
+        });
+
+        modelBuilder.Entity<Review>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("reviews");
+
+            entity.Property(e => e.Id).HasColumnType("int(11)");
+            entity.Property(e => e.Description).HasColumnType("text");
+            entity.Property(e => e.Name).HasMaxLength(50);
+            entity.Property(e => e.Rating).HasColumnType("tinyint(4)");
         });
 
         OnModelCreatingPartial(modelBuilder);
