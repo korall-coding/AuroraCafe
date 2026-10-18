@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <!--<link rel="stylesheet" href="~/AuroraCafe.styles.css" asp-append-version="true" />-->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Hurricane&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -30,11 +30,63 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - AuroraCafe - <a asp-area="" asp-page="/Privacy">Privacy</a>
+
+
+<footer class="site-footer">
+    <div class="footer-main">
+
+        <div class="footer-brand">
+            <a class="footer-logo" asp-page="/Index">auroracafé</a>
+            <p class="footer-tagline">
+                Jó kávé. Jó társaság. Apró örömök a mindennapokban.
+            </p>
+
+            <p class="footer-motto">
+                Egy csésze boldogság, egy szebb napért.
+            </p>
         </div>
-    </footer>
+
+        <div class="footer-links">
+            <h3>Felfedezés</h3>
+            <a asp-page="/Index">Kezdőlap</a>
+            <a asp-page="/Menu">Kínálat</a>
+            <a asp-page="/About">Rólunk</a>
+            <a asp-page="/Contact">Kapcsolat</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Várunk szeretettel</h3>
+            <p><i class="bi bi-geo-alt"></i> Sopron, Magyarország</p>
+            <p><i class="bi bi-clock"></i> Hétfő – Vasárnap</p>
+            <a asp-page="/Contact">
+                Lépj velünk kapcsolatba
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+        </div>
+
+        <div class="footer-social">
+            <h3>Kövess minket</h3>
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <i class="bi bi-facebook"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© @DateTime.Now.Year AuroraCafé. Minden jog fenntartva.</p>
+
+        <div class="footer-legal">
+            <a asp-page="/Privacy">Adatvédelem</a>
+        </div>
+    </div>
+</footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
