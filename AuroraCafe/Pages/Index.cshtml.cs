@@ -12,6 +12,8 @@ namespace AuroraCafe.Pages
 
         public IList<Product> FeaturedProducts { get; set; } = new List<Product>();
 
+        public IList<Review> Reviews { get; set; } = new List<Review>();
+
         public IndexModel(
             ILogger<IndexModel> logger,
             AuroraCafeDbContext context)
@@ -43,6 +45,14 @@ namespace AuroraCafe.Pages
 
             if (pastry != null)
                 FeaturedProducts.Add(pastry);
+
+
+
+            Reviews = _context.Reviews
+                .Where(p => p.IsVisible == true && p.Rating == 5)
+                .Take(3)
+                .ToList();
+
         }
 
 

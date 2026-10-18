@@ -111,7 +111,7 @@
             <p>Tejcsokoládé / pirított mandula / lágy karamell</p>
         </div>
         <div>
-            <a class="btn third" asp-page="/About">Kávéfiolozófiánk <i class="bi bi-arrow-up-right"></i></a>
+            <a class="btn third" asp-page="/About">Kávéfilozófiánk <i class="bi bi-arrow-up-right"></i></a>
         </div>
     </div>
 
@@ -120,30 +120,98 @@
     </div>
 </section>
 
+<section class="reviews-section">
+    <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
 
+            @for (int i = 0; i < Model.Reviews.Count; i++)
+            {
+                var review = Model.Reviews[i];
 
+                <div class="carousel-item @(i == 0 ? "active" : "")">
+                    <article class="review-card">
+                        <div class="review-stars">
+                            @for (int j = 0; j < review.Rating; j++)
+                            {
+                                <i class="bi bi-star-fill"></i>
+                            }
+                        </div>
 
-    <!--<p>Nálunk minden csésze kávé frissen készül, a sütemények pedig gondosan válogatott alapanyagokból készülnek. Legyen szó egy gyors reggeli kávéról, egy délutáni találkozóról vagy egy nyugodt beszélgetésről, nálunk mindig találsz egy kellemes helyet.</p>
+                        <p class="review-description">@review.Description</p>
+                        <p class="review-name">@review.Name</p>
+                    </article>
+                </div>
+            }
 
-    <h2>Amit nálunk találsz</h2>
-
-        <div class="box">
-            <h3>☕ Frissen készített kávék</h3>
-            <p>Klasszikus kedvencek és különleges kávékülönlegességek.</p>
         </div>
 
-        <div class="box">
-            <h3>🍰 Házi sütemények</h3>
-            <p>Édes finomságok, amelyek tökéletesen illenek egy csésze kávé mellé.</p>
+        <button class="carousel-control-prev" type="button"
+                data-bs-target="#reviewsCarousel" data-bs-slide="prev"
+                aria-label="Előző vélemény">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+                data-bs-target="#reviewsCarousel" data-bs-slide="next"
+                aria-label="Következő vélemény">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="cta-img">
+        <img src="~/images/cafe.webp" alt=""/>
+    </div>
+
+    <div class="cta-content">
+        <h2>Találkozunk hamarosan?</h2>
+
+        <p>Térj be hozzánk egy finom kávéra, egy szelet süteményre, vagy csak egy nyugodt pillanatra a nap közepén.</p>
+
+        <div class="come-by">
+            <div class="find-us">
+                <h3>Hol találsz minket?</h3>
+                <p>1111 Sopron,
+                    Rákóczi u. 46.</p>
+            </div>
+
+            <div class="open">
+                <h3>Ugorj be</h3>
+                <p>Hétfő - Péntek: <br />
+                    07:00 - 18:00
+                </p>
+                <p>Szombat és Vasárnap: <br />
+                    08:00 - 18:00
+                </p>
+            </div>
         </div>
 
-        <div class="box">
-            <h3>🌿 Hangulatos környezet</h3>
-            <p>Egy hely, ahol akár néhány percre, akár egy egész délutánra megpihenhetsz.</p>
-        </div>
+        <a class="btn primary" asp-page="/Contact">Kapcsolat <i class="bi bi-arrow-up-right"></i></a>
+    </div>
+</section>
 
-    <h2>Látogass meg minket!</h2>
-    <p>Várunk szeretettel egy finom kávéra és egy kis kikapcsolódásra.</p>
-    <a asp-page="/Menu">Nézd meg az étlapunkat →</a>-->
+<section class="newsletter">
+    <div class="newsletter-content">
+        <h2>Egy kis jóság a postaládádba.</h2>
+        <p>Szezonális kedvencek, helyi hírek és néha egy kedves üzenet tőlünk.</p>
+    </div>
 
+    <div class="newsletter-form">
+        <form>
+            <div class="newsletter-input-group">
+                <input type="email"
+                       name="email"
+                       placeholder="E-mail-címed"
+                       aria-label="E-mail-címed"
+                       required />
 
+                <button type="submit">Feliratkozom</button>
+            </div>
+
+            <p class="newsletter-note">
+                Csak a jó dolgok. Bármikor leiratkozhatsz.
+            </p>
+        </form>
+    </div>
+</section>
