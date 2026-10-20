@@ -66,6 +66,8 @@
     </div>
 
     <div class="third-content">
+        <p class="page-eyebrow">AURORACAFE · RÓLUNK</p>
+
         <h2>
             <span>Több mint egy kávézó.</span>
             <span>A mindennapok apró öröme.</span>
@@ -80,8 +82,14 @@
     <div class="fourth-content">
 
         <div class="fourth-heading">
-            <h2>Találd meg az új kedvenced</h2>
-            <a class="btn secondary" asp-page="/Menu">Teljes kínálat <i class="bi bi-arrow-up-right"></i></a>
+            <div class="fourth-title">
+                <p class="page-eyebrow">A KEDVENCEID NYOMÁBAN</p>
+                <h2>Találd meg az új kedvenced</h2>
+            </div>
+
+            <a class="btn secondary" asp-page="/Menu">
+                Teljes kínálat <i class="bi bi-arrow-up-right"></i>
+            </a>
         </div>
 
         <div class="cards">
@@ -92,7 +100,7 @@
 
                     <h3>@product.Name</h3>
 
-                    <p id="product-description">@product.Description</p>
+                    <p class="product-description">@product.Description</p>
 
                     <p>@product.Price.ToString("0") Ft</p>
                 </div>
@@ -103,6 +111,7 @@
 
 <section class="fifth">
     <div class="blend-content">
+        <p class="page-eyebrow">A KÁVÉ MÖGÖTTI TÖRTÉNET</p>
         <h2>A tökéletes kávé már a készítés előtt megszületik.</h2>
         <p>Független kávépörkölőkkel dolgozunk együtt, akik személyesen ismerik a termelőket, tisztességesen megfizetik a munkájukat, és hozzánk hasonlóan szívvel-lélekkel dolgoznak a minőségért.</p>
         <p>Minden kávészemnek megvan a maga története. Mi csak segítünk, hogy igazán kibontakozhasson.</p>
@@ -121,6 +130,7 @@
 </section>
 
 <section class="reviews-section">
+    <p class="page-eyebrow">VENDÉGEINK MONDTÁK</p>
     <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
 
@@ -165,6 +175,7 @@
     </div>
 
     <div class="cta-content">
+        <p class="page-eyebrow">SZERETETTEL VÁRUNK</p>
         <h2>Találkozunk hamarosan?</h2>
 
         <p>Térj be hozzánk egy finom kávéra, egy szelet süteményre, vagy csak egy nyugodt pillanatra a nap közepén.</p>
@@ -179,10 +190,10 @@
             <div class="open">
                 <h3>Ugorj be</h3>
                 <p>Hétfő - Péntek: <br />
-                    07:00 - 18:00
+                    7:00 - 18:00
                 </p>
                 <p>Szombat és Vasárnap: <br />
-                    08:00 - 18:00
+                    8:00 - 18:00
                 </p>
             </div>
         </div>
@@ -193,6 +204,7 @@
 
 <section class="newsletter">
     <div class="newsletter-content">
+        <p class="page-eyebrow">MARADJUNK KAPCSOLATBAN</p>
         <h2>Egy kis jóság a postaládádba.</h2>
         <p>Szezonális kedvencek, helyi hírek és néha egy kedves üzenet tőlünk.</p>
     </div>
