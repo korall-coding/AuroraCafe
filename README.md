@@ -3,7 +3,7 @@
 
 ## Magyar
 
-Az AuroraCafe egy kávézó weboldala, amely a kávézóban kapható termékek bemutatását, valamint a látogatókkal való kapcsolattartást szolgálja.
+Az AuroraCafe weboldala a kávézóban kapható termékek bemutatását, valamint a látogatókkal való kapcsolattartást szolgálja.
 
 A projekt célja egy modern, letisztult, hangulatos és reszponzív weboldal létrehozása.
 
