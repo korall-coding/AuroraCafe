@@ -16,11 +16,6 @@ body {
     font-family: Inter, "sans-serif";
 }
 
-.logo {
-    font-family: "Hurricane", cursive;
-    font-size: 3rem;
-}
-
 header {
     width: 100%;
 }
@@ -38,12 +33,13 @@ header {
 
     .main-nav .logo {
         position: absolute;
-        left: 20px;
+        left: 60px;
         top: 50%;
         transform: translateY(-50%);
         color: #3B2D24;
         font-family: "Hurricane", cursive;
-        font-size: 2rem;
+        font-size: 3rem;
+        line-height: 1;
         text-decoration: none;
     }
 
