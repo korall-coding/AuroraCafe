@@ -4,20 +4,84 @@
     ViewData["Title"] = "Kínálat";
 }
 
-<h1>Kínálat</h1>
+<div class="page-title">
+    <h1>Kínálat</h1>
+</div>
 
+<section>
+    <div class="menu-select">
+        <div class="menu-container">
+            <div class="menu-image">
+                <img src="~/images/espresso.webp" alt=""/>
+            </div>
+            <div class="menu-box">
+                <h2>Kávék</h2>
+                <p>Espresso, cappuccino, latte és további kávékülönlegességek.</p>
+                <a href="#coffee">Kávék megtekintése</a>
+            </div>
+            <div>
+                <a href="#coffee"><i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="menu-container">
+            <div class="menu-image">
+                <img src="~/images/chocolate-croissant.webp" alt=""/>
+            </div>
+            <div class="menu-box">
+                <h2>Péksütemények</h2>
+                <p>Frissen sült croissant-ok, leveles finomságok és sós péksütemények.</p>
+                <a href="#croissant">Péksütemények megtekintése</a>
+            </div>
+            <div>
+                <a href="#croissant"><i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="menu-container">
+            <div class="menu-image">
+                <img src="~/images/brownie.webp" alt=""/>
+            </div>
+            <div class="menu-box">
+                <h2>Sütemények</h2>
+                <p>Krémes tortaszeletek, édes desszertek és finom falatok.</p>
+                <a href="#cake">Sütemények megtekintése</a>
+            </div>
+            <div>
+                <a href="#cake"><i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="menu-content">
 @foreach (var category in Model.Categories)
 {
-    <h2>@category.Name</h2>
+        @if (category.Name == "Kávék")
+        {
+            <h2 id="coffee">Kávék</h2>
+        }
+        else if (category.Name == "Péksütemények")
+        {
+            <h2 id="croissant">Péksütemények</h2>
+        }
+        else
+        {
+            <h2 id="cake">Sütemények</h2>
+        }
 
+    <div class="menu-cards">
     @foreach (var product in Model.Products)
     {
+
         if (product.CategoryId == category.Id)
         {
-            <p>@product.Name</p>
-            <p>@product.Description</p>
-            <p>@product.Price.ToString("0") Ft</p>
-            <img src="~/images/@product.ImageUrl" alt="@product.Name" />
+            <div class="menu-card">
+                <img src="~/images/@product.ImageUrl" alt="@product.Name" />
+                <h3>@product.Name</h3>
+                <p class="product-description">@product.Description</p>
+                <p>@product.Price.ToString("0") Ft</p>
+            </div>
         }
     }
+    </div>
 }
+</div>

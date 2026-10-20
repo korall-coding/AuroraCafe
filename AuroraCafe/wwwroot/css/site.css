@@ -53,6 +53,15 @@ header {
         color: #3B2D24;
     }
 
+.page-title {
+    width: 100%;
+    background-color: #EDE3D5;
+    padding: 20px 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 section {
     margin-top: 120px;
     margin-bottom: 120px;
@@ -352,7 +361,7 @@ h2 {
     margin: 0 auto;
 }
 
-#product-description {
+.product-description {
     font-size: 0.8rem;
 }
 
@@ -810,4 +819,71 @@ h2 {
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+
+
+
+.menu-select {
+    border: 1px solid #8B5E42;
+    width: 50%;
+    margin: 0 auto;
+    padding: 30px 30px;
+
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu-box {
+    display: block;
+}
+
+.menu-box h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.menu-box p {
+    font-size: 0.8rem;
+}
+
+.menu-box a {
+    text-decoration: none;
+    color: #8B5E42;
+}
+
+.menu-box a:hover {
+    color: #453328;
+}
+
+.menu-image {
+    width: 200px;
+    height: 133px;
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-content {
+    margin: 0 auto;
+}
+
+.menu-content h2 {
+    text-align: center;
+}
+
+.menu-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 100px;
 }
