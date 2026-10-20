@@ -4,25 +4,119 @@
     ViewData["Title"] = "Kapcsolat";
 }
 
-<div>
-    <h1>Hol tudsz minket elérni?</h1>
-    <div class="box">
-        <h2>Elérhetőség</h2>
-        <ul>
-            <li>Cím: Budapest, III. ker. Rákóczi u. 45.</li>
-            <li>Telefon: +36301234567</li>
-            <li>hello@auroracafe.hu</li>
-        </ul>
+<section class="page-hero">
+    <div class="page-hero-content">
+        <p class="page-eyebrow">AURORACAFE · KAPCSOLAT</p>
+        <h1>Hol találkozunk?</h1>
+        <p>
+            Akár egy kérdésed van, akár csak beugranál
+            egy finom kávéra, örömmel látunk!
+        </p>
     </div>
-    <div class="box">
-        <h2>Nyitvatartás</h2>
-        <ul>
-            <li>Hétfő-Péntek: 8:00 - 18:00</li>
-            <li>Szombat: 9:00 - 18:00</li>
-            <li>Vasárnap: 9:00 - 16:00</li>
-        </ul>
-    </div>
+</section>
 
-    <h2>Írj nekünk!</h2>
-    <p>Kérdésed van, asztalt szeretnél foglalni, vagy csak megosztanád velünk a kedvenc kávédat? Írj nekünk az alábbi űrlapon keresztül, és hamarosan válaszolunk!</p>
-</div>
+<section class="contact-section">
+    <div class="contact-container">
+
+        <div class="contact-image">
+            <img src="~/images/contact.webp"
+                 alt="Az AuroraCafe kávéja" />
+        </div>
+
+        <div class="contact-details">
+
+            <div class="contact-content">
+                <h2>Hol találsz minket?</h2>
+
+                <ul>
+                    <li>
+                        <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                        <span>Budapest, III. kerület, Rákóczi u. 45.</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-telephone" aria-hidden="true"></i>
+                        <span>
+                            <a href="tel:+36301234567">+36 30 123 4567</a>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="bi bi-envelope" aria-hidden="true"></i>
+                        <span>
+                            <a href="mailto:hello@auroracafe.hu">
+                                hello@auroracafe.hu
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-content">
+                <h2>Nyitvatartás</h2>
+
+                <ul>
+                    <li>
+                        <i class="bi bi-clock" aria-hidden="true"></i>
+                        <span>Hétfő – Péntek: 7:00–18:00</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-clock" aria-hidden="true"></i>
+                        <span>Szombat és Vasárnap: 8:00–18:00</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="contact-form-section">
+    <div class="contact-form-container">
+
+        <p class="contact-eyebrow">LÉPJ VELÜNK KAPCSOLATBA</p>
+        <h2>Írj nekünk!</h2>
+
+        <p class="contact-form-intro">
+            Kérdésed van, asztalt szeretnél foglalni,
+            vagy csak megosztanád velünk a kedvenc kávédat?
+            Írj nekünk bizalommal!
+        </p>
+
+        <form method="post">
+
+            <div class="form-group">
+                <label for="name">Hogyan szólíthatunk?</label>
+                <input type="text"
+                       id="name"
+                       name="Name"
+                       placeholder="A neved"
+                       autocomplete="name"
+                       required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Mi az e-mail-címed?</label>
+                <input type="email"
+                       id="email"
+                       name="Email"
+                       placeholder="pelda@email.com"
+                       autocomplete="email"
+                       required />
+            </div>
+
+            <div class="form-group">
+                <label for="message">Miben tudunk segíteni?</label>
+                <textarea id="message"
+                          name="Message"
+                          rows="6"
+                          placeholder="Írd meg nekünk az üzeneted..."
+                          required></textarea>
+            </div>
+
+            <button type="submit" class="btn primary">
+                Üzenet küldése
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </button>
+
+        </form>
+    </div>
+</section>
