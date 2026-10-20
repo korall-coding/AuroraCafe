@@ -11,19 +11,31 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Hurricane&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header>
         <nav class="main-nav">
-            <div>
-                <a class="logo" asp-area="" asp-page="/Index">auroracafé</a>
+            <a class="logo" asp-area="" asp-page="/Index">auroracafé</a>
+
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Menü megnyitása"
+                    aria-expanded="false"
+                    aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <a asp-area="" asp-page="/Index">Kezdőoldal</a>
+                <a asp-area="" asp-page="/About">Rólunk</a>
+                <a asp-area="" asp-page="/Menu">Kínálat</a>
+                <a asp-area="" asp-page="/Contact">Kapcsolat</a>
             </div>
-
-            <a asp-area="" asp-page="/Index">Kezdőoldal</a>
-            <a asp-area="" asp-page="/About">Rólunk</a>
-            <a asp-area="" asp-page="/Menu">Kínálat</a>
-            <a asp-area="" asp-page="/Contact">Kapcsolat</a>
-
         </nav>
     </header>
+
+
     <div class="container">
         <main role="main">
             @RenderBody()
@@ -89,5 +101,32 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+
+    
+    <script>
+            const menuToggle = document.querySelector(".menu-toggle");
+            const mainNav = document.querySelector(".main-nav");
+            const navLinks = document.querySelectorAll(".nav-links a");
+
+            menuToggle.addEventListener("click", function () {
+                const isOpen = mainNav.classList.toggle("is-open");
+
+                menuToggle.setAttribute("aria-expanded", isOpen);
+                menuToggle.setAttribute(
+                    "aria-label",
+                    isOpen ? "Menü bezárása" : "Menü megnyitása"
+                );
+            });
+
+            navLinks.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    mainNav.classList.remove("is-open");
+                    menuToggle.setAttribute("aria-expanded", "false");
+                    menuToggle.setAttribute("aria-label", "Menü megnyitása");
+                });
+            });
+    </script>
+
 </body>
 </html>

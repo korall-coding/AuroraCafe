@@ -21,10 +21,8 @@ body {
     font-size: 3rem;
 }
 
-
 header {
-    display: flex;
-    align-items: center;
+    width: 100%;
 }
 
 .main-nav {
@@ -32,26 +30,102 @@ header {
     position: relative;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #D9CCBE;
+    box-sizing: border-box;
     width: 100%;
     padding: 20px;
+    border-bottom: 1px solid #D9CCBE;
 }
-
-    .main-nav a {
-        text-decoration: none;
-        color: #3B2D24;
-        padding: 20px;
-        font-size: 0.9rem;
-    }
 
     .main-nav .logo {
         position: absolute;
         left: 20px;
-        font-size: 2rem;
         top: 50%;
         transform: translateY(-50%);
         color: #3B2D24;
+        font-family: "Hurricane", cursive;
+        font-size: 2rem;
+        text-decoration: none;
     }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+    .nav-links a {
+        padding: 20px;
+        color: #3B2D24;
+        font-size: 0.9rem;
+        text-decoration: none;
+    }
+
+        .nav-links a:hover {
+            color: #8B5E42;
+        }
+
+/* Hamburger gomb – asztali nézetben nem látható */
+.menu-toggle {
+    display: none;
+    border: none;
+    padding: 8px;
+    background: transparent;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        justify-content: flex-end;
+        min-height: 76px;
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        z-index: 1001;
+    }
+
+        .menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color: #3B2D24;
+            transition: transform 0.2s ease;
+        }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #F8F4ED;
+        border-bottom: 1px solid #D9CCBE;
+    }
+
+    .main-nav.is-open .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px 20px;
+        text-align: center;
+    }
+}
+
 
 section {
     margin-top: 120px;
@@ -121,6 +195,17 @@ h2 {
     line-height: 1.1;
 }
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: clamp(2.2rem, 7vw, 3rem);
+    }
+
+    h2 {
+        font-size: clamp(1.8rem, 5.5vw, 2.4rem);
+    }
+}
+
+
 .right {
     flex: 1;
     display: flex;
@@ -156,7 +241,7 @@ h2 {
     transition: all 0.3s ease;
 }
 
-@media (max-widht: 768px) {
+@media (max-width: 768px) {
     .btn {
         display: block;
     }
@@ -171,7 +256,7 @@ h2 {
         color: #FFFCF7;
     }
 
-@media (max-widht: 768px) {
+@media (max-width: 768px) {
     .btn.primary {
         text-align: center;
     }
@@ -183,7 +268,7 @@ h2 {
     border: 1px solid #8B5E42;
 }
 
-@media (max-widht: 768px) {
+@media (max-width: 768px) {
     .btn.secondary {
         text-align: center;
     }
@@ -673,6 +758,148 @@ h2 {
 
 
 
+@media (max-width: 768px) {
+
+    .first {
+        box-sizing: border-box;
+        width: calc(100% - 40px);
+        max-width: none;
+        padding: 10px 0;
+        gap: 25px;
+    }
+
+        .first .right img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .first .cta-buttons {
+            justify-content: center;
+        }
+
+    .third {
+        box-sizing: border-box;
+        width: calc(100% - 40px);
+        max-width: none;
+        padding: 10px 0;
+        gap: 30px;
+    }
+
+    .third-image {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 60px;
+    }
+
+    .large-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .small-image {
+        right: 0;
+        bottom: -40px;
+        width: clamp(130px, 40vw, 180px);
+        max-width: 60%;
+        box-sizing: border-box;
+    }
+
+    .third-content {
+        max-width: 100%;
+    }
+
+    .fourth-heading {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .fourth-title {
+        align-items: center;
+    }
+
+    .cards {
+        display: block;
+        width: 100%;
+    }
+
+        .cards .card {
+            box-sizing: border-box;
+            width: 100%;
+            min-width: 0;
+            margin-bottom: 30px;
+        }
+
+            .cards .card img {
+                display: block;
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+    .blend-content {
+        box-sizing: border-box;
+        padding: 30px 20px;
+    }
+
+    .blend-image img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .review-card {
+        padding: 25px 45px;
+    }
+
+    .review-description {
+        font-size: clamp(1.5rem, 5vw, 2.2rem);
+        overflow-wrap: anywhere;
+    }
+
+    .cta {
+        box-sizing: border-box;
+        width: calc(100% - 40px);
+        max-width: none;
+        padding: 10px 0;
+        gap: 30px;
+    }
+
+    .cta-img img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+        .cta-buttons .btn {
+            box-sizing: border-box;
+            width: 100%;
+            text-align: center;
+        }
+
+    .review-card {
+        padding: 20px 35px;
+    }
+
+    .review-stars i {
+        font-size: 22px;
+    }
+}
 
 
 
@@ -830,7 +1057,6 @@ h2 {
 
 
 
-/* RÓLUNK – BEVEZETŐ */
 .about-intro {
     padding: 90px 20px;
     background-color: #fff;
@@ -868,9 +1094,6 @@ h2 {
     margin-bottom: 18px;
 }
 
-
-/* RÓLUNK – A KÁVÉ SZERETETE */
-
 .about-coffee {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -904,8 +1127,6 @@ h2 {
     }
 
 
-/* RÓLUNK – HANGULAT ÉS ÉRTÉKEK */
-
 .about-values {
     padding: 90px 20px;
     background-color: #fff;
@@ -931,7 +1152,6 @@ h2 {
 }
 
 
-/* RESZPONZÍV MEGJELENÉS */
 
 @media (max-width: 768px) {
     .about-intro,
@@ -972,10 +1192,11 @@ h2 {
 
 
 .menu-select {
+    box-sizing: border-box;
     border: 1px solid #8B5E42;
     width: 50%;
     margin: 0 auto;
-    padding: 30px 30px;
+    padding: 30px;
 }
 
 .menu-container {
@@ -1009,12 +1230,16 @@ h2 {
 
 .menu-image {
     width: 200px;
-    height: 133px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 
 .menu-image img {
+    display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .menu-content {
@@ -1034,7 +1259,60 @@ h2 {
     margin-bottom: 100px;
 }
 
+.menu-card {
+    min-width: 0;
+    max-width: 100%;
+}
 
+    .menu-card img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+@media (max-width: 768px) {
+    .menu-select {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .menu-container {
+        display: block;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .menu-arrow {
+        display: none;
+    }
+
+    .menu-image {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .menu-cards {
+        display: block;
+        margin: 0 10px 50px;
+    }
+
+    .menu-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+    }
+
+    .menu-card img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+     }
+}
 
 
 
@@ -1074,8 +1352,6 @@ h2 {
     max-width: 600px;
     margin: 0 auto;
 }
-
-/* MOBILNÉZET */
 
 @media (max-width: 480px) {
     .page-hero {
